@@ -3,9 +3,10 @@
   }
   body {
     font-family: Arial, Tahoma, sans-serif;
+    background-color: #092236;
   }
   .timer{
-    background-color: #041a2c;
+    background-color: #a0c1dd;
     border-radius: 30px 30px 0 0;
     width: 240px;
     height: 40px;
@@ -15,7 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(56, 53, 68);
     font-size: 25px;
     transition: 0.7s;
   }
@@ -49,6 +50,7 @@
     font-size: 24px;
     overflow: hidden;
     border: 2px solid #041a2c;
+    border-radius: 5px;
   }
   .info-container .name {
     float: left;
@@ -61,7 +63,7 @@
   }
   .memory-game-blocks {
     display: flex;
-    width: 1100px;
+    width: 900px;
     flex-wrap: wrap;
     margin: 20px auto;
   }
@@ -69,13 +71,14 @@
     pointer-events: none;
   }
   .memory-game-blocks .game-block {
-    height: 200px;
+    height: 100px;
     transition: transform .5s;
     transform-style:preserve-3d;
     cursor: pointer;
     position: relative;
-    flex: 1 0 200px;
+    flex: 1 0 150px;
     margin: 0 10px 20px;
+    border: #225513 solid 2px;
   }
   .memory-game-blocks .game-block .front {
     background-color:  rgb(18, 111, 128);
@@ -84,17 +87,19 @@
   .memory-game-blocks .game-block .front:before {
     content: '!';
     color: #FFF;
-    font-size: 140px;
+    font-size: 50px;
     font-weight: bold;
+    position: relative;
+    top: -50%;
   }
   .memory-game-blocks .game-block .back {
     background-color: #14181a;
     transform: rotateY(180deg);
   }
   .memory-game-blocks .game-block .back img {
-    width: 140px;
-    height: 140px;
-    margin-top: 30px;
+    width: 80px;
+    height: 80px;
+    margin-top: 3px;
   }
   .memory-game-blocks .game-block .face {
     position: absolute;
@@ -166,3 +171,67 @@
     border-radius: 6px;
     cursor: pointer;
   }
+
+
+  @media only screen and (max-width: 1023px) {
+    body {
+        background-color: #225513;
+    }
+    .timer{
+      background-color: #dde1e6;
+      border-radius: 30px 30px 0 0;
+      margin-top: 30px;
+      width: 140px;
+      height: 40px;
+      position: relative;
+      left:calc(50% - 30px) ;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(56, 53, 68);
+      font-size: 25px;
+      transition: 0.7s;
+    }
+    .info-container {
+      width: 80%;
+      position: relative;
+      left:calc(50% - 40%) ;
+      background-color: #F6F6F6;
+      padding: 10px;
+      font-size: 14px;
+      overflow: hidden;
+      border: 2px solid #041a2c;
+      border-radius: 5px;
+    }
+    .memory-game-blocks {
+      display: flex;
+      width: 500px;
+      flex-wrap: wrap;
+      margin: 100px auto;
+    }
+    .memory-game-blocks .game-block {
+      height: 80px;
+      transition: transform .5s;
+      transform-style:preserve-3d;
+      cursor: pointer;
+      position: relative;
+      flex: 1 0 90px;
+      margin: 0 10px 20px;
+      border: #225513 solid 2px;
+    }
+    .memory-game-blocks .game-block .back img {
+      width: 70px;
+      height: 95%;
+      margin-top: 0px;
+      padding: 1px;    
+    }
+    .memory-game-blocks .game-block .front:before {
+        content: '!';
+        color: #FFF;
+        font-size: 50px;
+        font-weight: bold;
+        position: relative;
+        top: -100%;
+      }
+}
